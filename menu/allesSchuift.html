@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Inhoud schuift</title>
+    <meta name="author" content="Nowl Driesten">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/css.css">
+    <style>
+      #toggleMenu:checked ~ main {
+        margin-left: 10em;
+      }
+
+      #toggleMenu:checked ~ nav {
+        margin-left: 0;
+      }
+
+      #toggleLabel::before {
+        content: "\2630";
+        cursor: pointer;
+      }
+
+      #toggleMenu:checked ~ main  #toggleLabel::before {
+        content: "\2715";
+      }
+
+      nav {
+        position: fixed;
+        margin-left: -10em;
+        transition: margin-left .6s cubic-bezier(.17, .67, .83, 1.36);
+      }
+
+      main {
+        position: absolute;
+        margin-left: 0;
+        transition: margin-left .6s cubic-bezier(.17, .67, .83, 1.36);
+      }
+
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="toggleMenu">
+    <nav>
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="index.html">Inhoud schuift</a></li>
+        <li><a href="menuSchuift.html">Menu schuift</a></li>
+        <li><a href="allesSchuift.html"  class="actief">Alles schuift</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <label for="toggleMenu" id="toggleLabel"></label>
+      <h1>Rainbow Six Siege</h1>
+      <p><img src="https://www.eneba.com/blog/wp-content/uploads/2019/02/The-Six-Invitational-1024x576.jpg" alt="Rainbow Six Siege 2018 6 Invitationals"></p>
+      <p>Rainbow Six is een geweldige First Person Shooter.</p>
+      <p>In siege speel je als een speciale anti-terreur groep.</p>
+      <p>Je bevindt je in kleine gebouwen waar de meeste vuurgevechten close quarter zijn.</p>
+      <p>Dit maakt siege enorm spannend.</p>
+    </main>
+  </body>
+</html>
